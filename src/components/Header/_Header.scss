@@ -1,0 +1,21 @@
+.header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__line {
+    border: 1px solid var(--second-color);
+    margin-top: 20px;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 52px;
+  }
+}
