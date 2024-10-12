@@ -52,15 +52,15 @@
     border-radius: var(--border-radius);
     margin-bottom: 50px;
 
-   .social__item{
-     cursor: pointer;
-     transition: all 0.3s;
+    .social__item {
+      cursor: pointer;
+      transition: all 0.3s;
 
-     &:hover{
-       transition: all 0.3s;
-       filter: drop-shadow(0 0 15px var(--white));
-     }
-   }
+      &:hover {
+        transition: all 0.3s;
+        filter: drop-shadow(0 0 15px var(--white));
+      }
+    }
   }
 
 }
