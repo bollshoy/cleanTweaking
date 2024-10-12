@@ -37,23 +37,30 @@ const Hero = () => {
                 {heroList.map((item) => (
                     <div className="social__item" key={item.id}>
                         <a href={item.link} className="social__link">
-                            <img src={item.image} alt="icon" className="social__img" />
+                            <img src={item.image} alt="icon" className="social__img"/>
                         </a>
                     </div>
                 ))}
             </div>
-            <div className="hero__container">
-                <h1 className="hero__title">
-                    Лучшая оптимизация <br />
-                    для вашего ПК
-                </h1>
-                <p className="hero__text">
-                    Ускорьте работу вашего компьютера: советы <br />
-                    и инструменты для максимальной производительности.
-                </p>
-                <a href="#" className="hero__link">купить оптимизацию</a>
+            <div className="hero__container container">
+                <div className="hero__content">
+                    <h1 className="hero__title">
+                        Лучшая оптимизация <br/>
+                        для вашего ПК
+                    </h1>
+                    <p className="hero__text">
+                        Ускорьте работу вашего компьютера: советы <br/>
+                        и инструменты для максимальной производительности.
+                    </p>
+                    <a href="#" className="hero__link">купить оптимизацию</a>
+                </div>
+                {/*<div className="mouse">*/}
+                {/*    <div className="roll"></div>*/}
+                {/*</div>*/}
             </div>
-            <Computers />
+
+            <Computers/>
+
         </section>
     );
 };
