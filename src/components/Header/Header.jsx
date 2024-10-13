@@ -9,9 +9,7 @@ const Header = () => {
                 <div className="header__logo">
                     <a href="#" className="logo">CleanTweaking</a>
                 </div>
-                <Navbar/>
             </div>
-            <div className="header__line"></div>
         </header>
     );
 };
