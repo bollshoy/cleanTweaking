@@ -1,55 +1,55 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import 'swiper/swiper-bundle.css'; // Импорт стилей Swiper
+import React, {useState} from 'react';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import slidersData from '../../../slidersData.js';
+import {Pagination, Navigation} from 'swiper/modules';
 import './_Advantages.scss';
 
 const Advantages = () => {
+    const [priceCurrency, setPriceCurrency] = useState('RUB');
+
+    const togglePrice = () => {
+        setPriceCurrency(prev => (prev === 'RUB' ? 'EUR' : 'RUB'));
+    };
+
     return (
         <section className="advantages">
             <div className="advantages__container container">
-                <div className="advantages__content-title">
-                    <span className="advantages__subtitle">Более 500 бустов</span>
-                    <h2 className="advantages__title">Вот что мы предлагаем</h2>
+                <div className="advantages__title-content">
+                    <h2 className="advantages__title">
+                        Нам доверяют более <br/>
+                        500+ наших клиентов
+                    </h2>
+                    <div className="price-toggle">
+                        <button onClick={togglePrice}>
+                            {priceCurrency === 'RUB' ? 'Показать в EUR' : 'Показать в RUB'}
+                        </button>
+                    </div>
                 </div>
-               <div className="swiper">
-                   <Swiper
-                       className="mySwiper"
-                       modules={[Navigation, Pagination, Scrollbar, A11y]} // Подключаем необходимые модули
-                       spaceBetween={30}
-                       slidesPerView={3}
-                       pagination={{ clickable: true }}
-                       navigation={{
-                           nextEl: '.swiper-button-next', // Класс кастомной кнопки "вперед"
-                           prevEl: '.swiper-button-prev' // Класс кастомной кнопки "назад"
-                       }}
-                       loop={true} // Добавлено для зацикливания
-                       breakpoints={{
-                           640: {
-                               slidesPerView: 1,
-                           },
-                           768: {
-                               slidesPerView: 2,
-                           },
-                           1024: {
-                               slidesPerView: 3,
-                           },
-                           1280: {
-                               slidesPerView: 4,
-                           },
-                       }}
-                   >
-                       <SwiperSlide>Слайд 1</SwiperSlide>
-                       <SwiperSlide>Слайд 2</SwiperSlide>
-                       <SwiperSlide>Слайд 3</SwiperSlide>
-                       <SwiperSlide>Слайд 4</SwiperSlide>
-                       <SwiperSlide>Слайд 5</SwiperSlide>
-                   </Swiper>
 
-                   {/* Кастомные стрелки навигации */}
-                   <div className="swiper-button-prev"></div>
-                   <div className="swiper-button-next"></div>
-               </div>
+                <Swiper
+                    className="mySwiper"
+                    spaceBetween={30}
+                    slidesPerView={3}
+                    loop={true}
+                    pagination={{clickable: true}}
+                    navigation
+                    modules={[Pagination, Navigation]}
+                >
+                    {slidersData.map((slide) => (
+                        <SwiperSlide key={slide.id}>
+                            <div className="slide__content">
+                                <div className="slide__item">
+                                    <h3 className="slide__title">{slide.title}</h3>
+                                    <p className="slide__text">{slide.description}</p>
+                                    <p className="slide__price">
+                                        Цена: {priceCurrency === 'RUB' ? slide.priceRUB : slide.priceEUR} {priceCurrency}
+                                    </p>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
         </section>
     );
