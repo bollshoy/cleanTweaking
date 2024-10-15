@@ -1,5 +1,6 @@
 .main {
-  background-image: url('../../assets/images/herobg.jpg'); /* Замените на путь к вашему изображению */
+  background: rgb(18,18,18);
+  background: linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(35,41,66,1) 100%);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
