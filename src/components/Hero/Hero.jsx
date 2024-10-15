@@ -4,10 +4,9 @@ import vk from '../../assets/icons/vk.svg';
 import telegram from '../../assets/icons/telegram.svg';
 import email from '../../assets/icons/email.svg';
 import Computers from "../Computers/Computers.jsx";
-import heroBg from '../../assets/images/herobg.jpg';
-import './_Hero.scss';
 import Header from "../Header/Header.jsx";
 import Navbar from "../Navbar/Navbar.jsx";
+import './_Hero.scss';
 
 const Hero = () => {
 
@@ -59,12 +58,10 @@ const Hero = () => {
                 </div>
                 <div className="hero__container container">
                     <div className="hero__content">
-                        <h1 className="hero__title">
-                            Лучшая оптимизация <br />
-                            для вашего ПК
-                        </h1>
+                        <h1 className="hero__title">Лучшая оптимизация<br/> вашего ПК</h1>
+
                         <p className="hero__text">
-                            Ускорьте работу вашего компьютера: советы <br />
+                            Ускорьте работу вашего компьютера: советы <br/>
                             и инструменты для максимальной производительности.
                         </p>
                         <a href="#" className="hero__link">купить оптимизацию</a>

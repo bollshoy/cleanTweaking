@@ -4,6 +4,7 @@ import 'swiper/swiper-bundle.css';
 import slidersData from '../../../slidersData.js';
 import {Pagination, Navigation} from 'swiper/modules';
 import './_Advantages.scss';
+import {NavLink} from "react-router-dom";
 
 const Advantages = () => {
     const [priceCurrency, setPriceCurrency] = useState('RUB');
@@ -45,6 +46,11 @@ const Advantages = () => {
                                     <p className="slide__price">
                                         Цена: {priceCurrency === 'RUB' ? slide.priceRUB : slide.priceEUR} {priceCurrency}
                                     </p>
+                                    <button className="button button--animated slide__link">
+                                        <NavLink to={'/'}>
+                                            <span className="button__text">КУПИТЬ</span>
+                                        </NavLink>
+                                    </button>
                                 </div>
                             </div>
                         </SwiperSlide>

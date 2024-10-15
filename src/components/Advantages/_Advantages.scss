@@ -1,6 +1,7 @@
 .advantages {
   margin-top: 120px;
 
+
   &__title-content {
     display: flex;
     align-items: center;
@@ -122,8 +123,36 @@
         font-weight: 400;
         font-size: 20px;
         line-height: 28px;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
       }
+
+      .slide__price {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 28px;
+        margin-bottom: 15px;
+      }
+
+      .button--animated {
+        background-color: var(--primary-color);
+        color: white;
+        overflow: hidden;
+        position: relative;
+
+        .button__text {
+          display: inline-block;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          .button__text {
+            transform: translateX(-10px);
+            -webkit-box-shadow: 0px 0px 20px 0px #000000;
+            box-shadow: 0px 0px 20px 0px #000000;
+          }
+        }
+      }
+
     }
   }
 }
